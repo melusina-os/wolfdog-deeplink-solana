@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lineage Verifier — Melusina</title>
+  <script type="module" crossorigin src="/watchdog-deeplink-solana/admin/assets/verify-BIUWjh8d.js"></script>
+  <link rel="modulepreload" crossorigin href="/watchdog-deeplink-solana/admin/assets/common-C51FUouZ.js">
+  <link rel="stylesheet" crossorigin href="/watchdog-deeplink-solana/admin/assets/style-D_3egcUf.css">
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="foundation.html">Foundation</a>
+    <a href="license.html">Licenses</a>
+    <a href="verify.html" class="active">Verify</a>
+  </nav>
+
+  <h1>🔍 Lineage Verifier</h1>
+  <p class="sub">Verify the full provenance chain of any License NFT: License → Reseller → Master NFT. No wallet needed — read-only.</p>
+
+  <!-- Config -->
+  <div class="card">
+    <h2>Configuration</h2>
+    <div class="grid">
+      <div><label>RPC Endpoint</label><input id="cfg-rpc" value="https://api.devnet.solana.com"></div>
+      <div><label>Program ID</label><input id="cfg-program" value="EFjd6AhLRE1curgyK5V6A1nediM2BEyzXo9fwEqNbnop"></div>
+    </div>
+    <label>Master NFT Mint (expected)</label>
+    <input id="cfg-master" value="CnnETKyqcTLG1GTKibYjEv7vdXxPnwWAzLZTA81E5FRN">
+  </div>
+
+  <!-- Verify -->
+  <div class="card">
+    <h2>Verify License</h2>
+    <label>License NFT Mint Address</label>
+    <div style="display:flex;gap:8px">
+      <input id="v-mint" placeholder="Enter the License NFT mint public key" style="flex:1">
+      <button id="btn-verify">Verify Lineage</button>
+    </div>
+    <div id="verify-log" class="log-box hidden" style="margin-top:12px"></div>
+  </div>
+
+  <!-- Results -->
+  <div id="results" class="hidden">
+    <!-- Summary -->
+    <div class="card" id="result-summary"></div>
+
+    <!-- License Details -->
+    <div class="card">
+      <h2>📜 License Entry</h2>
+      <div id="result-license"></div>
+    </div>
+
+    <!-- Edition Chain -->
+    <div class="card">
+      <h2>🔗 Metaplex Edition Chain</h2>
+      <div id="result-edition"></div>
+    </div>
+
+    <!-- Reseller Details -->
+    <div class="card">
+      <h2>🏪 Reseller Entry</h2>
+      <div id="result-reseller"></div>
+    </div>
+
+    <!-- Registry -->
+    <div class="card">
+      <h2>🏛️ License Registry</h2>
+      <div id="result-registry"></div>
+    </div>
+  </div>
+
+</body>
+</html>

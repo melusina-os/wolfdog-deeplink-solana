@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Melusina Admin</title>
+  <style>
+    .hero { text-align: center; padding: 60px 20px 40px; }
+    .hero h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+    .hero p { color: var(--dim); font-size: 1rem; max-width: 500px; margin: 0 auto 2rem; }
+    .tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; max-width: 800px; margin: 0 auto; }
+    .tool-card { background: var(--card); border-radius: 14px; padding: 28px 24px; text-align: center; text-decoration: none; color: var(--text); transition: transform 0.15s, box-shadow 0.15s; border: 1px solid rgba(255,255,255,0.05); }
+    .tool-card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99,102,241,0.15); text-decoration: none; }
+    .tool-card .icon { font-size: 2.5rem; margin-bottom: 12px; }
+    .tool-card h2 { font-size: 1.1rem; margin-bottom: 6px; }
+    .tool-card p { font-size: 0.85rem; color: var(--dim); }
+  </style>
+  <link rel="stylesheet" crossorigin href="/watchdog-deeplink-solana/admin/assets/style-D_3egcUf.css">
+</head>
+<body>
+  <div class="hero">
+    <h1>Melusina Admin</h1>
+    <p>On-chain license management tools for the Melusina ecosystem. Connect your wallet and manage the full deployment lifecycle.</p>
+  </div>
+  <div class="tools">
+    <a href="foundation.html" class="tool-card">
+      <div class="icon">🏛️</div>
+      <h2>Foundation Admin</h2>
+      <p>Initialize registry. Issue Reseller NFTs. Manage the root of the license chain.</p>
+    </a>
+    <a href="license.html" class="tool-card">
+      <div class="icon">📜</div>
+      <h2>License Issuer</h2>
+      <p>Issue License NFTs under a reseller. Bind domains, set thresholds, assign owners.</p>
+    </a>
+    <a href="verify.html" class="tool-card">
+      <div class="icon">🔍</div>
+      <h2>Lineage Verifier</h2>
+      <p>Verify any license NFT's full provenance chain back to the Master NFT.</p>
+    </a>
+  </div>
+  <div style="text-align:center; margin-top:40px; color:var(--dim); font-size:0.8rem;">
+    <p>Devnet · Program: EFjd6Ah…nbnop · Master NFT: CnnETK…5FRN</p>
+  </div>
+</body>
+</html>

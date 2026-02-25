@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>License Issuer — Melusina</title>
+  <script type="module" crossorigin src="/watchdog-deeplink-solana/admin/assets/license-SJIGytwS.js"></script>
+  <link rel="modulepreload" crossorigin href="/watchdog-deeplink-solana/admin/assets/common-C51FUouZ.js">
+  <link rel="stylesheet" crossorigin href="/watchdog-deeplink-solana/admin/assets/style-D_3egcUf.css">
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="foundation.html">Foundation</a>
+    <a href="license.html" class="active">Licenses</a>
+    <a href="verify.html">Verify</a>
+  </nav>
+
+  <h1>📜 License Issuer</h1>
+  <p class="sub">Issue License NFTs under a Reseller. Prints an edition from the Master NFT and binds it to a domain.</p>
+
+  <!-- Config -->
+  <div class="card">
+    <h2>Configuration</h2>
+    <div class="grid">
+      <div><label>RPC Endpoint</label><input id="cfg-rpc" value="https://api.devnet.solana.com"></div>
+      <div><label>Program ID</label><input id="cfg-program" value="EFjd6AhLRE1curgyK5V6A1nediM2BEyzXo9fwEqNbnop"></div>
+    </div>
+    <label>Master NFT Mint</label>
+    <input id="cfg-master" value="CnnETKyqcTLG1GTKibYjEv7vdXxPnwWAzLZTA81E5FRN">
+  </div>
+
+  <!-- Wallet -->
+  <div class="card">
+    <h2>Wallet</h2>
+    <div id="wallet-buttons"></div>
+    <div id="wallet-info" class="hidden" style="margin-top:12px">
+      <div class="info-grid">
+        <span class="label">Address</span><span class="value" id="w-addr"></span>
+        <span class="label">Master NFT</span><span class="value" id="w-nft"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Issue License -->
+  <div class="card">
+    <h2>Issue License NFT</h2>
+    <p class="sub">Prints an edition and registers a license bound to a domain. Requires the Master NFT holder to sign the edition.</p>
+    <label>Reseller</label>
+    <select id="l-reseller"><option value="">— Loading resellers… —</option></select>
+
+    <div class="grid">
+      <div><label>Domain</label><input id="l-domain" placeholder="e.g. customer.example.com"></div>
+      <div><label>Unlock Threshold (M of N)</label><input id="l-threshold" type="number" value="2" min="1" max="255"></div>
+    </div>
+    <label>TLS Certificate Fingerprint (64 hex chars, or click Random)</label>
+    <div style="display:flex;gap:8px;align-items:start">
+      <input id="l-tls" placeholder="SHA-256 hex of DER TLS public key" style="flex:1">
+      <button id="btn-random-tls" class="btn-sm btn-outline">Random</button>
+    </div>
+    <label>Install URL</label>
+    <input id="l-install-url" placeholder="e.g. https://admin.customer.example.com">
+    <label>License Owner Wallet (leave blank = your wallet)</label>
+    <input id="l-owner" placeholder="Owner wallet public key">
+    <button id="btn-issue-license" disabled>Print Edition + Activate License</button>
+    <div id="license-log" class="log-box hidden"></div>
+  </div>
+
+  <!-- Licenses Table -->
+  <div class="card">
+    <h2>Licenses</h2>
+    <div id="licenses-table"><span style="color:var(--dim)">Loading…</span></div>
+  </div>
+
+</body>
+</html>

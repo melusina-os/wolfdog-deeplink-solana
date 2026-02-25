@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foundation Admin — Melusina</title>
+  <script type="module" crossorigin src="/watchdog-deeplink-solana/admin/assets/foundation-CFJc1CRR.js"></script>
+  <link rel="modulepreload" crossorigin href="/watchdog-deeplink-solana/admin/assets/common-C51FUouZ.js">
+  <link rel="stylesheet" crossorigin href="/watchdog-deeplink-solana/admin/assets/style-D_3egcUf.css">
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="foundation.html" class="active">Foundation</a>
+    <a href="license.html">Licenses</a>
+    <a href="verify.html">Verify</a>
+  </nav>
+
+  <h1>🏛️ Foundation Admin</h1>
+  <p class="sub">Initialize the registry and issue Reseller NFTs. Requires the Master NFT holder wallet.</p>
+
+  <!-- Config -->
+  <div class="card">
+    <h2>Configuration</h2>
+    <div class="grid">
+      <div><label>RPC Endpoint</label><input id="cfg-rpc" value="https://api.devnet.solana.com"></div>
+      <div><label>Program ID</label><input id="cfg-program" value="EFjd6AhLRE1curgyK5V6A1nediM2BEyzXo9fwEqNbnop"></div>
+    </div>
+    <label>Master NFT Mint</label>
+    <input id="cfg-master" value="CnnETKyqcTLG1GTKibYjEv7vdXxPnwWAzLZTA81E5FRN">
+  </div>
+
+  <!-- Wallet -->
+  <div class="card">
+    <h2>Wallet</h2>
+    <div id="wallet-buttons"></div>
+    <div id="wallet-info" class="hidden" style="margin-top:12px">
+      <div class="info-grid">
+        <span class="label">Address</span><span class="value" id="w-addr"></span>
+        <span class="label">Master NFT</span><span class="value" id="w-nft"></span>
+        <span class="label">SOL Balance</span><span class="value" id="w-bal"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Registry -->
+  <div class="card">
+    <h2>License Registry</h2>
+    <div id="registry-info"><span style="color:var(--dim)">Connect wallet to load…</span></div>
+    <div style="margin-top:12px">
+      <button id="btn-init-registry" disabled>Initialize Registry</button>
+    </div>
+  </div>
+
+  <!-- Issue Reseller -->
+  <div class="card">
+    <h2>Issue Reseller NFT</h2>
+    <p class="sub">Prints an edition from the Master NFT and registers it as a Reseller on-chain.</p>
+    <div class="grid">
+      <div><label>Reseller Name</label><input id="r-name" placeholder="e.g. Melusina Foundation"></div>
+      <div><label>Territory</label><input id="r-territory" placeholder="e.g. GLOBAL, EU, US-EAST"></div>
+    </div>
+    <div class="grid">
+      <div><label>Issuance Limit</label><input id="r-limit" type="number" value="100" min="1"></div>
+      <div><label>Category (optional)</label><input id="r-category" placeholder="e.g. Enterprise"></div>
+    </div>
+    <label>Owner Wallet (receives the Reseller NFT)</label>
+    <input id="r-owner" placeholder="Owner wallet public key (leave blank = your wallet)">
+    <button id="btn-issue-reseller" disabled>Print Edition + Activate Reseller</button>
+    <div id="reseller-log" class="log-box hidden"></div>
+  </div>
+
+  <!-- Resellers Table -->
+  <div class="card">
+    <h2>Resellers</h2>
+    <div id="resellers-table"><span style="color:var(--dim)">Loading…</span></div>
+  </div>
+
+</body>
+</html>
